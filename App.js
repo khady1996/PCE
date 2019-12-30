@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Accueil from './Components/Accueil'
+
 
 /* From BuilderX
 import React, { Component } from "react";
@@ -724,6 +726,20 @@ const styles = StyleSheet.create({
 export default Post;
 
 */
+
+
+// TUTO
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Accueil/>
+    )
+  }
+}
+
+/* BASE
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -740,3 +756,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/

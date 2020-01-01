@@ -2,29 +2,25 @@ import React from 'react';
 import {StyleSheet, View, TextInput, Button , FlatList } from 'react-native';
 
 
-import films from 'C:/DEV/AppliMonument/Helpers/MonumentsData'
-import FilmItem from './MonumentItem'
+//import monuments from '../Helpers/monumentsData'
+import MonumentItem from './MonumentItem'
 
 class Accueil extends React.Component {
 	
 	render() {
+		
+		
+		
         return (
 			<View>
 		  <TextInput style={styles.textinput} placeholder = 'Monuments'/>
-			<Button style={styles.textinput} title='Rechercher'  onPress={() => {}}/>
-			<FlatList
-  data={films}
-  keyExtractor={(item) => item.id.toString()}
-  renderItem={({item}) => <Text>{item.title}</Text>}
-/>
-			
+			<Button style={styles.textinput} title='Naviguer'  onPress={() => {}}/>
+		
 		  </View>
     )
     }
   
 }
-
-export default Accueil;
 
 const styles = StyleSheet.create({
   textinput: {
@@ -35,4 +31,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     paddingLeft: 5
   }
-});
+})
+
+export default Accueil;
+

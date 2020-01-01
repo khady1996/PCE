@@ -12,6 +12,10 @@ class Accueil extends React.Component {
 		
 		
         return (
+		
+			 
+				
+			  
 			<View>
 			  <TextInput style={styles.textinput} placeholder = 'Monuments'/>
 				

@@ -1,6 +1,9 @@
 import React from 'react';
 import {StyleSheet, View, TextInput, Button , FlatList } from 'react-native';
-//import films from 'C:/DEV/AppliMonument/Helpers/MonumentsData'
+
+
+import films from 'C:/DEV/AppliMonument/Helpers/MonumentsData'
+import FilmItem from './MonumentItem'
 
 class Accueil extends React.Component {
 	
@@ -9,7 +12,11 @@ class Accueil extends React.Component {
 			<View>
 		  <TextInput style={styles.textinput} placeholder = 'Monuments'/>
 			<Button style={styles.textinput} title='Rechercher'  onPress={() => {}}/>
-			
+			<FlatList
+  data={films}
+  keyExtractor={(item) => item.id.toString()}
+  renderItem={({item}) => <Text>{item.title}</Text>}
+/>
 			
 		  </View>
     )

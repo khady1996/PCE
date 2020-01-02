@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, View, TextInput, Button , FlatList, Text } from 'react-native';
-
+import MaterialCommunityIconsIcon from "react-native-vector-icons/MaterialCommunityIcons";
+import FeatherIcon from "react-native-vector-icons/Feather";
 
 //import monuments from '../Helpers/monumentsData'
 import MonumentItem from './MonumentItem'
@@ -22,7 +23,7 @@ class Accueil extends React.Component {
       vote_average:7.2,
       title:"Tour EIFFEL",
       poster_path:"",
-      original_title:"Star Wars: The Last Jedi",
+      original_title:"",
       overview:" La tour Eiffel est une structure en fer puddlé, un fer qui a perdu une part de son carbone et donc rouille moins vite. Elle est de forme pyramidale aux côtés légèrement incurvés. Elle mesure 324m de haut et se divise en 4 parties séparées par un étage. Jusqu'au deuxième étage la tour est faite de 4 piliers distincts, mais à partir de là ils se joignent en un unique pylone qui s'élève verticalement jusqu'au sommet. Les étages sont successivement aux altitudes de 57m, 115m et 276m. Il existe un étage intermédiaire, entre le deuxième et le troisième, mais il est inutilisé de nos jours. Il servait, au XIXe et début XXe siècle, de plate-forme de transbordement pour les passagers allant au sommet car les ascenseurs n'étaient pas capables de s'élever si haut en une seule fois.La tour est décorée d'arcades, au niveau du premier étage, et chaque étage possède différents bâtiments : Restaurants, boutiques, musées, galeries d'observation, et même, l'hiver, une patinoire. Les ascenseurs facilitent la montée des visiteurs mais il est possible de monter la tour par l'escalier jusqu'au 2e étage.",
       release_date:"2017-12-13"
    },
@@ -95,7 +96,23 @@ class Accueil extends React.Component {
 	/>
 	
 	<Button style={styles.textinput} title='Naviguer'  onPress={() => {}}/>
+	
+	<View style={styles.rect7}>
+        <MaterialCommunityIconsIcon
+          name="home"
+          style={styles.icon6}
+        ></MaterialCommunityIconsIcon>
+        <FeatherIcon name="search" style={styles.icon7}></FeatherIcon>
+        <MaterialCommunityIconsIcon
+          name="bell-outline"
+          style={styles.icon8}
+        ></MaterialCommunityIconsIcon>
+        <FeatherIcon name="mail" style={styles.icon9}></FeatherIcon>
+      </View>
 		  </View>
+	
+      
+
     )
     }
   
@@ -109,6 +126,28 @@ const styles = StyleSheet.create({
     borderColor: '#000000',
     borderWidth: 1,
     paddingLeft: 5
+  },
+  rect7: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
+    flex: 1
+  },
+  icon6: {
+    color: "#1da6fa",
+    fontSize: 40
+  },
+  icon7: {
+    color: "#1da6fa",
+    fontSize: 40
+  },
+  icon8: {
+    color: "#1da6fa",
+    fontSize: 40
+  },
+  icon9: {
+    color: "#1da6fa",
+    fontSize: 40
   }
 })
 

@@ -3,6 +3,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
 
+
 class MonumentItem extends React.Component {
   render() {
 	  console.log(this.props)
@@ -11,7 +12,8 @@ class MonumentItem extends React.Component {
       <View style={styles.main_container}>
         <Image
           style={styles.image}
-          source={require("../assets/images/Arc_de_Triomphe.jpg")}
+          source={{uri:monument.poster_path}}
+		  //{require("../assets/images/Arc_de_Triomphe.jpg")}
 		  // je voudrais mettre comme source {monument.poster_path}
         />
         <View style={styles.content_container}>

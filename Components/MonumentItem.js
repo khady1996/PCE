@@ -11,7 +11,8 @@ class MonumentItem extends React.Component {
       <View style={styles.main_container}>
         <Image
           style={styles.image}
-          source={{uri: "image"}}
+          source={require("../assets/images/Arc_de_Triomphe.jpg")}
+		  // je voudrais mettre comme source {monument.poster_path}
         />
         <View style={styles.content_container}>
           <View style={styles.header_container}>
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 180,
     margin: 5,
-    backgroundColor: 'gray'
+    //backgroundColor: 'gray'
   },
   content_container: {
     flex: 1,

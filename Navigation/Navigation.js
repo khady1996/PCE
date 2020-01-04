@@ -4,7 +4,7 @@ import MonumentDetail from '../Components/MonumentDetail'
 
 
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'; // 6.2.2
 import { createBottomTabNavigator} from 'react-navigation-tabs';
 
@@ -14,7 +14,23 @@ class ParcoursScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Veuillez sélectionner votre parcours!</Text>
+         <Image
+          source={require("../Images/logo.png")}
+          style={{ resizeMode: 'contain', flex: 1 }}
+        />
+      </View>
+    );
+  }
+}
+
+class LocalisationScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+         <Image
+          source={require("../Images/logo.png")}
+          style={{ resizeMode: 'contain', flex: 1 }}
+        />
       </View>
     );
   }
@@ -71,21 +87,25 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
   let IconComponent = Ionicons;
   let iconName;
   if (routeName === 'Parcours') {
-    iconName = `ios-train${focused ? '' : '-outline'}`;
+    iconName = `ios-train`;
     // We want to add badges to home tab icon
     IconComponent = HomeIconWithBadge;
   } else if (routeName === 'Settings') {
 	  
-   iconName = `ios-options${focused ? '' : '-outline'}`;
+   iconName = `ios-options`;
   
   }
   else if (routeName === 'Accueil') {
 	  
-   iconName = `ios-home${focused ? '' : '-outline'}`;
+   iconName = `ios-home`;
+  }
+  else if (routeName === 'Localisation') {
+	  
+   iconName = `ios-navigate`;
   }
 
   // You can return any component that you like here!
-  return <IconComponent name={iconName} size={25} color={tintColor} />;
+  return <IconComponent name={iconName} size={30} color={tintColor} />;
 };
 
 export default createAppContainer(
@@ -99,6 +119,8 @@ export default createAppContainer(
   },
       Parcours: { screen: ParcoursScreen },
       Settings: { screen: SettingsScreen },
+	  Localisation: { screen: LocalisationScreen },
+	  
 	  
     },
 	

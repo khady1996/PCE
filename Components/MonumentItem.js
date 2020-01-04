@@ -1,21 +1,26 @@
-// Components/FilmItem.js
+
 
 import React from 'react'
-import { StyleSheet, View, Text, Image } from 'react-native'
-
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import  { getImage } from "./getImage"
 
 class MonumentItem extends React.Component {
   render() {
 	  console.log(this.props)
-     const monument = this.props.monument
+	  const { monument, displayDetailForMonument } = this.props
+	
     return (
-      <View style={styles.main_container}>
+	
+      <TouchableOpacity
+        style={styles.main_container}
+        onPress={() => displayDetailForMonument(monument.id)}>
+	  
         <Image
           style={styles.image}
-          source={{uri:monument.poster_path}}
-		  //{require("../assets/images/Arc_de_Triomphe.jpg")}
-		  // je voudrais mettre comme source {monument.poster_path}
+          source={{uri: getImage(monument.poster_path)}}
         />
+		
+		
         <View style={styles.content_container}>
           <View style={styles.header_container}>
             <Text style={styles.title_text}>{monument.title}</Text>
@@ -25,13 +30,14 @@ class MonumentItem extends React.Component {
             <Text style={styles.description_text} numberOfLines={6}>{monument.overview}</Text>
           </View>
           <View style={styles.date_container}>
-            <Text style={styles.date_text}>Sorti le {monument.release_date}</Text>
+            <Text style={styles.date_text}>Mise à jour le {monument.release_date}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     )
 }
 }
+
 
 
 const styles = StyleSheet.create({
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
     height: 190,
     flexDirection: 'row'
   },
-  image: {
+ image: {
     width: 120,
     height: 180,
     margin: 5,

@@ -10,11 +10,11 @@ import { createBottomTabNavigator} from 'react-navigation-tabs';
 
 import {createAppContainer } from 'react-navigation';
 
-class HomeScreen extends React.Component {
+class ParcoursScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
+        <Text>Veuillez sélectionner votre parcours!</Text>
       </View>
     );
   }
@@ -70,8 +70,8 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
   const { routeName } = navigation.state;
   let IconComponent = Ionicons;
   let iconName;
-  if (routeName === 'Home') {
-    iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+  if (routeName === 'Parcours') {
+    iconName = `ios-train${focused ? '' : '-outline'}`;
     // We want to add badges to home tab icon
     IconComponent = HomeIconWithBadge;
   } else if (routeName === 'Settings') {
@@ -91,14 +91,15 @@ const getTabBarIcon = (navigation, focused, tintColor) => {
 export default createAppContainer(
   createBottomTabNavigator(
     {
-      Home: { screen: HomeScreen },
-      Settings: { screen: SettingsScreen },
-	  Accueil: { 
+		Accueil: { 
     screen: Accueil,
     navigationOptions: {
       title: 'Monuments'
     }
   },
+      Parcours: { screen: ParcoursScreen },
+      Settings: { screen: SettingsScreen },
+	  
     },
 	
     {

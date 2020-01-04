@@ -15,7 +15,7 @@ class ParcoursScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
          <Image
-          source={require("../Images/logo.png")}
+          source={require("../assets/images/parcours.jpg")}
           style={{ resizeMode: 'contain', flex: 1 }}
         />
       </View>
@@ -28,7 +28,7 @@ class LocalisationScreen extends React.Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
          <Image
-          source={require("../Images/logo.png")}
+          source={require("../assets/images/localisation.jfif")}
           style={{ resizeMode: 'contain', flex: 1 }}
         />
       </View>
@@ -118,8 +118,9 @@ export default createAppContainer(
     }
   },
       Parcours: { screen: ParcoursScreen },
-      Settings: { screen: SettingsScreen },
 	  Localisation: { screen: LocalisationScreen },
+      Settings: { screen: SettingsScreen },
+	  
 	  
 	  
     },
